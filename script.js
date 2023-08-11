@@ -51,18 +51,30 @@ window.onload = function () {
     }
   });
 
-  odeslat.addEventListener("click", function (event) {
-    event.preventDefault();
+  //odeslat.addEventListener("click", function (event) {
+  //   event.preventDefault();
 
+  //   let specialniZnaky = "!@#$%^&*()+=-[]\\';,./{}|\":<>?";
+
+  //   for (let i = 0; i < poznamka.value.length; i++) {
+  //     if (specialniZnaky.indexOf(poznamka.value.charAt(i)) != -1) {
+  //       alert("Zkontroluj si poznamky a vymaz specialni znaky");
+  //     } else {
+  //       alert("Objednavka odeslana");
+  //     }
+  //   }
+  // });
+  poznamka.addEventListener("input", function () {
     let specialniZnaky = "!@#$%^&*()+=-[]\\';,./{}|\":<>?";
+    let newValue = "";
 
     for (let i = 0; i < poznamka.value.length; i++) {
-      if (specialniZnaky.indexOf(poznamka.value.charAt(i)) != -1) {
-        alert("Zkontroluj si poznamky a vymaz specialni znaky");
-      } else {
-        alert("Objednavka odeslana");
+      if (specialniZnaky.indexOf(poznamka.value[i]) === -1) {
+        newValue += poznamka.value[i];
       }
     }
+
+    poznamka.value = newValue;
   });
   resetB.addEventListener("click", function (event) {
     event.preventDefault();
