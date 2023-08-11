@@ -64,10 +64,11 @@ window.onload = function () {
   //     }
   //   }
   // });
+
   poznamka.addEventListener("input", function () {
     let specialniZnaky = "!@#$%^&*()+=-[]\\';,./{}|\":<>?";
     let newValue = "";
-
+    //pokud se zadany znak neshoduje se specialnimi znaky vrati -1 a zobrazi ho
     for (let i = 0; i < poznamka.value.length; i++) {
       if (specialniZnaky.indexOf(poznamka.value[i]) === -1) {
         newValue += poznamka.value[i];
